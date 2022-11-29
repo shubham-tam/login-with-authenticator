@@ -1,0 +1,9 @@
+li {
+  list-style-type: none;
+}
+
+h1 {
+  text-align: center;
+  padding: 40px;
+  /* font-weight: 600; */
+}
