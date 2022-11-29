@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
+import { ProductPage } from "./components/ProductPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./assets/style/style.css";
@@ -14,10 +15,10 @@ function App() {
 
   return (
     <>
-      <h1> Product List </h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path=":id" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
     </>

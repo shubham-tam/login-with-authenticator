@@ -1,39 +1,50 @@
-import dropdown from "..//assets/icon/dropdown.png";
-import minus from "..//assets/icon/minus.png";
+import { Link } from "react-router-dom";
+import cart from "..//assets/icon/cart.png";
+// import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+
 import classes from "..//assets/style/item.module.css";
 
 export const Item = ({ item, id, isActive, setIsActive }) => {
-  const { category, description, price, title, image } = item;
+  const { price, title, image, rating } = item;
 
-  const toggler = () => {
-    if (id === isActive) {
-      setIsActive();
-    } else {
-      setIsActive(id);
-    }
-  };
+  // const toggler = () => {
+  //   if (id === isActive) {
+  //     setIsActive();
+  //   } else {
+  //     setIsActive(id);
+  //   }
+  // };
 
   return (
     <>
       <div className={classes.item}>
-        <div className={classes.category}>
+        {/* <div className={classes.category}>
           <h3> {category.charAt(0).toUpperCase() + category.slice(1)} </h3>
-        </div>
+        </div> */}
         <div className={classes.imgBg}>
           <img src={image} alt="" className={classes.image} />
         </div>
         <div className={`${classes.titlePrice} ${classes.alignment}`}>
-          <h4>{title}</h4>
-          <h4 className={classes.price}>${price}</h4>
+          <Link to={`${id}`} target="_blank" rel="noopener noreferrer">
+            <h4>{title}</h4>
+          </Link>
         </div>
-        <div onClick={() => toggler()} className={classes.buttonToggler}>
-          Description <img src={id === isActive ? minus : dropdown} alt="" />
+        <div className={classes.rating}>
+          <Rating
+            name="read-only"
+            value={rating?.rate}
+            precision={0.1}
+            readOnly
+          />
+          <h4 className={classes.rateNum}> {rating?.rate}</h4>
         </div>
-        {id === isActive && (
-          <div className={`${classes.desc} ${classes.alignment}`}>
-            <div>{description}</div>
-          </div>
-        )}
+        <div className={`${classes.titlePrice} ${classes.alignment}`}>
+          {/* <div className={classes.cartAndPrice}> */}
+          <h3 className={classes.price}>${price}</h3>
+          {/* <img src={cart} alt="" /> */}
+          {/* </div> */}
+        </div>
       </div>
     </>
   );

@@ -1,9 +1,3 @@
-.list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
-}
-
 .listItems {
   /* border: 1px solid red; */
   display: grid;
@@ -11,4 +5,5 @@
   gap: 2.5rem;
   /* background-color: #e0e0e0; */
   padding-left: 80px;
+  background-color: #f0edee;
 }

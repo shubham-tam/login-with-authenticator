@@ -21,7 +21,6 @@ export const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (setUserName || setPassword === "") {
-      console.log("empty");
       toast.error("Your input fields are emtpy!");
     }
     const token = await loginUser({
@@ -36,7 +35,6 @@ export const Login = ({ setToken }) => {
       <div className={classes["login-container"]}>
         <form id="form" onSubmit={handleSubmit} className={classes.form}>
           <h2 className={classes.header}> Please Log In </h2>
-
           <div className={classes["form-control"]}>
             <label>
               <input
@@ -53,7 +51,6 @@ export const Login = ({ setToken }) => {
               placeholder="Enter password"
             />
           </div>
-
           <button type="submit">Submit</button>
         </form>
         <ToastContainer

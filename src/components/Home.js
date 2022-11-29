@@ -4,6 +4,8 @@ import classes from "../assets/style/home.module.css";
 import "..//App.css";
 import { Item } from "./Item";
 import "../assets/style/style.css";
+import { NavBar } from "./NavBar";
+import { Footer } from "./Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -18,6 +20,8 @@ export const Home = () => {
       });
   });
 
+  // console.log(products);
+
   useEffect(() => {
     toast.promise(fetchData, {
       pending: "Loading Products",
@@ -28,12 +32,17 @@ export const Home = () => {
 
   return (
     <>
+      <NavBar />
+      <h1 style={{ backgroundColor: "#f0edee", color: "#3498db" }}>
+        {" "}
+        Product List{" "}
+      </h1>
       <div className={classes.listItems}>
-        {products.map((item, id) => {
+        {products.map((item) => {
           return (
             <li key={item.id} className={classes.list}>
               <Item
-                id={id}
+                id={item.id}
                 item={item}
                 isActive={isActive}
                 setIsActive={setIsActive}
@@ -42,6 +51,8 @@ export const Home = () => {
           );
         })}
       </div>
+      {/* {products && <Footer />} */}
+
       <ToastContainer
         position="top-right"
         autoClose={2000}
