@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Home } from "./components/Home";
-import { Login } from "./components/Login";
-import { ProductPage } from "./components/ProductPage";
+import { Home } from "./components/Pages/Home";
+import { Login } from "./components/Pages/Login";
+import { ProductPage } from "./components/Pages/ProductPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./assets/style/style.css";
-
 function App() {
   // const [token, setToken] = useState();
 

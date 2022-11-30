@@ -6,20 +6,31 @@ ul {
   background-color: #3498db;
 }
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
+.listItems {
   color: white;
+  padding: 14px 0;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
-li img {
+
+.listItems .cartImg {
   padding: 10px 14px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0;
 }
 .end {
   float: right;
+  padding: 16px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.end:hover {
+  background-color: #1578ba;
 }

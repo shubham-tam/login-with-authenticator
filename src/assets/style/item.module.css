@@ -23,6 +23,10 @@
   border-bottom: 1px solid #3498db;
 }
 
+.headers {
+  text-decoration: none;
+}
+
 .category {
   color: #fff;
   display: flex;
@@ -41,6 +45,7 @@
   align-items: center;
   text-align: center;
   color: #343434;
+  /* color: red; */
   height: 70px;
 }
 
@@ -81,11 +86,14 @@
 
 .rating {
   display: flex;
+  position: static;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 5px;
 }
 
 .rateNum {
   align-self: center;
+
+  color: #faaf00;
 }

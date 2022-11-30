@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import classes from "..//assets/style/productList.module.css";
-import axios from "../axios";
-import { NavBar } from "./NavBar";
+import classes from "..//..//assets/style/productList.module.css";
+import axios from "../../axios";
+import { NavBar } from "..//UI/NavBar";
 import Rating from "@mui/material/Rating";
-import { AddToCart } from "./AddToCart";
+// import { AddToCart } from "./AddToCart";
 
 export const ProductPage = () => {
   const { id } = useParams();
@@ -58,7 +58,7 @@ export const ProductPage = () => {
               />
               <h4 className={classes.rateNum}>
                 {" "}
-                <small>{info?.rating?.count} reviews</small>
+                <small>{info?.rating?.count}+ reviews</small>
               </h4>
             </div>
             <div className={classes.description}>
@@ -66,10 +66,9 @@ export const ProductPage = () => {
               {info?.description?.charAt(0).toUpperCase() +
                 info?.description?.slice(1)}
             </div>
-            <div className={classes.priceAndAddToCart}></div>
-            {info?.price}
+            <div className={classes.priceAndAddToCart}>${info?.price}</div>
 
-            <AddToCart id={id} />
+            {/* <AddToCart id={id} /> */}
           </div>
         </div>
       </div>

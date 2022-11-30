@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import cart from "..//assets/icon/cart.png";
+import { NavLink } from "react-router-dom";
+import cart from "..//..//assets/icon/cart.png";
 import { Cart } from "./Cart";
-
-import classes from "..//assets/style/nav.module.css";
-import "../App.css";
+import classes from "..//..//assets/style/nav.module.css";
+import "..//..//App.css";
 
 export const NavBar = () => {
   const [showCart, setShowCart] = useState(false);
@@ -17,24 +16,14 @@ export const NavBar = () => {
     <>
       <div>
         <ul>
-          {/* <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#news">News</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li> */}
-
           <li style={{ float: "right" }}>
-            <li>
-              <button onClick={cartToggler}>
+            <NavLink className={classes.listItems}>
+              <button onClick={cartToggler} className={classes.btn}>
                 <img src={cart} alt="cart" className={classes.cartImg} />
               </button>
 
               {showCart && <Cart />}
-            </li>
+            </NavLink>
             <NavLink
               to="/"
               target="_blank"

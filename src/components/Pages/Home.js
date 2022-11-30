@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import classes from "../assets/style/home.module.css";
-import "..//App.css";
-import { Item } from "./Item";
-import "../assets/style/style.css";
-import { NavBar } from "./NavBar";
-import { Footer } from "./Footer";
+import classes from "..//..//assets/style/home.module.css";
+import "..//..//App.css";
+import { Item } from "../UI/Item";
+import "..//..//assets/style/style.css";
+import { NavBar } from "..//UI/NavBar";
+// import { Footer } from "./Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -37,7 +37,7 @@ export const Home = () => {
         <div className={classes.listItems}>
           {products.map((item) => {
             return (
-              <li key={item.id} className={classes.list}>
+              <li key={item.id}>
                 <Item id={item.id} item={item} />
               </li>
             );

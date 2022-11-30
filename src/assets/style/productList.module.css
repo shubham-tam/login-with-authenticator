@@ -50,13 +50,17 @@
 }
 
 .description {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 25px 0;
   font-size: 18px;
   font-weight: 500;
+}
+
+.description h4 {
+  color: #1578ba;
 }
 
 .rating {
@@ -68,5 +72,14 @@
 
 .priceAndAddToCart {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: -20px;
+  padding: 10px 1px;
+  width: 140px;
+  font-weight: bold;
+  color: #333;
+  /* background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  text-align: center; */
 }
