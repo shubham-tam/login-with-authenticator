@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import cart from "..//assets/icon/cart.png";
-// import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 
 import classes from "..//assets/style/item.module.css";
 
-export const Item = ({ item, id, isActive, setIsActive }) => {
+export const Item = ({ item, id }) => {
   const { price, title, image, rating } = item;
 
   // const toggler = () => {
@@ -19,9 +18,6 @@ export const Item = ({ item, id, isActive, setIsActive }) => {
   return (
     <>
       <div className={classes.item}>
-        {/* <div className={classes.category}>
-          <h3> {category.charAt(0).toUpperCase() + category.slice(1)} </h3>
-        </div> */}
         <div className={classes.imgBg}>
           <img src={image} alt="" className={classes.image} />
         </div>

@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  border-bottom: 1px solid #3498db;
 }
 
 .category {
@@ -79,7 +80,6 @@
 }
 
 .rating {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -89,8 +89,3 @@
 .rateNum {
   align-self: center;
 }
-
-/* .cartAndPrice {
-  display: flex;
-  justify-content: space-between;
-} */

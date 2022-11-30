@@ -9,7 +9,6 @@ import { Footer } from "./Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
-  const [isActive, setIsActive] = useState();
 
   const fetchData = new Promise((resolve) => {
     fetch("https://fakestoreapi.com/products/")
@@ -33,24 +32,19 @@ export const Home = () => {
   return (
     <>
       <NavBar />
-      <h1 style={{ backgroundColor: "#f0edee", color: "#3498db" }}>
-        {" "}
-        Product List{" "}
-      </h1>
-      <div className={classes.listItems}>
-        {products.map((item) => {
-          return (
-            <li key={item.id} className={classes.list}>
-              <Item
-                id={item.id}
-                item={item}
-                isActive={isActive}
-                setIsActive={setIsActive}
-              />
-            </li>
-          );
-        })}
+      <div style={{ backgroundColor: "#f0edee" }}>
+        <h1> Product List </h1>
+        <div className={classes.listItems}>
+          {products.map((item) => {
+            return (
+              <li key={item.id} className={classes.list}>
+                <Item id={item.id} item={item} />
+              </li>
+            );
+          })}
+        </div>
       </div>
+
       {/* {products && <Footer />} */}
 
       <ToastContainer

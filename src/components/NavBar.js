@@ -1,16 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import cart from "..//assets/icon/cart.png";
+import { Cart } from "./Cart";
 
 import classes from "..//assets/style/nav.module.css";
 import "../App.css";
 
 export const NavBar = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const cartToggler = () => {
+    showCart ? setShowCart(false) : setShowCart(true);
+  };
+
   return (
     <>
       <div>
         <ul>
-          <li>
+          {/* <li>
             <a href="#home">Home</a>
           </li>
           <li>
@@ -18,21 +25,25 @@ export const NavBar = () => {
           </li>
           <li>
             <a href="#contact">Contact</a>
-          </li>
+          </li> */}
 
           <li style={{ float: "right" }}>
             <li>
-              <img src={cart} alt="cart" className={classes.cartImg} />
+              <button onClick={cartToggler}>
+                <img src={cart} alt="cart" className={classes.cartImg} />
+              </button>
+
+              {showCart && <Cart />}
             </li>
-            <Link
+            <NavLink
               to="/"
-              // target="_blank"
-              // rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className={classes.end}
             >
               {" "}
               Log Out
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
