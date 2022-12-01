@@ -18,7 +18,20 @@
   /* padding: 20px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   gap: 20px;
+  width: 50%;
+  color: #333;
+}
+
+.error {
+  color: red;
+}
+
+.descriptionBox {
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

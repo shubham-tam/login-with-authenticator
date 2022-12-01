@@ -5,6 +5,7 @@ import classes from "..//..//assets/style/productList.module.css";
 import axios from "../../axios";
 import { NavBar } from "..//UI/NavBar";
 import Rating from "@mui/material/Rating";
+import { UpdateProduct } from "../Dashboard/UpdateProduct";
 // import { AddToCart } from "./AddToCart";
 
 export const ProductPage = () => {
@@ -24,11 +25,15 @@ export const ProductPage = () => {
     fetchProductInformation();
   }, [id]);
 
-  // console.log(info);
+  // console.log("info", info);
 
   return (
     <>
       <NavBar />
+      <div>
+        <UpdateProduct id={id} info={info} />
+        {/* {console.log(id)} */}
+      </div>
       <div className={classes.container}>
         <div className={classes.product}>
           <div>
@@ -67,8 +72,6 @@ export const ProductPage = () => {
                 info?.description?.slice(1)}
             </div>
             <div className={classes.priceAndAddToCart}>${info?.price}</div>
-
-            {/* <AddToCart id={id} /> */}
           </div>
         </div>
       </div>

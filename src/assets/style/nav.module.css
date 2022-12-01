@@ -4,6 +4,21 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #3498db;
+  /* float: le; */
+}
+
+.left {
+  float: left;
+  padding: 16px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.left:hover {
+  background-color: #1578ba;
 }
 
 .listItems {

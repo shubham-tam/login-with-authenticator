@@ -10,23 +10,26 @@ import { NavBar } from "..//UI/NavBar";
 export const Home = () => {
   const [products, setProducts] = useState([]);
 
-  const fetchData = new Promise((resolve) => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => {
-        setTimeout(() => resolve(data), 10);
-        setProducts(data);
-      });
-  });
+  const fetchData = (status) => {
+    new Promise((resolve) => {
+      fetch("https://fakestoreapi.com/products/")
+        .then((res) => res.json())
+        .then((data) => {
+          setTimeout(() => resolve(data), 10);
+          if (status !== 200) {
+            setProducts(data);
+            toast.success("Products loaded");
+          } else {
+            toast.error("Wrong api request");
+          }
+        });
+    });
+  };
 
-  // console.log(products);
+  console.log(products);
 
   useEffect(() => {
-    toast.promise(fetchData, {
-      pending: "Loading Products",
-      success: "Products Loaded",
-      error: "error",
-    });
+    fetchData();
   }, []);
 
   return (
