@@ -18,7 +18,7 @@ export const ProductPage = () => {
         setInfo(res.data);
         toast.success("Product information loaded");
       } catch (err) {
-        toast.error("something wrong with the api");
+        toast.error("Something wrong with the api");
       }
     };
     fetchProductInformation();
