@@ -1,17 +1,27 @@
 .container {
-  /* width: 80%; */
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f8f8f8;
-
-  /* margin-left: 10%; */
 }
 
 .image {
   width: 400px;
   height: 400px;
+}
+.modal button {
+  background-color: transparent;
+  border: none;
+}
+
+.modal img {
+  width: 24px;
+  height: 24px;
+}
+
+.modal img:hover {
+  transform: scale(1.1);
 }
 
 .body {
@@ -78,8 +88,21 @@
   width: 140px;
   font-weight: bold;
   color: #333;
-  /* background-color: #3498db;
-  color: white;
-  border-radius: 4px;
-  text-align: center; */
+}
+
+.button {
+  float: right;
+  background: transparent;
+  border: 1px solid #3498db;
+  color: #3498db;
+  padding: 6px 14px;
+  border-radius: 3px;
+  font-size: 22px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3498db;
+  color: #fff;
 }

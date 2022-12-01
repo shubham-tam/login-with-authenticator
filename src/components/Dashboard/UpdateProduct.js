@@ -1,12 +1,14 @@
 import React from "react";
-import classes from "..//..//assets/style/addNewProduct.module.css";
+import classes from "..//..//assets/style/updateProduct.module.css";
 import * as Yup from "yup";
 
 import { ToastContainer, toast } from "react-toastify";
 import { useFormik } from "formik";
 
 export const UpdateProduct = (id) => {
-  console.log("name", id?.info?.title);
+  // console.log("id", id);
+  // console.log("name", id?.info?.title);
+
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -14,23 +16,14 @@ export const UpdateProduct = (id) => {
       price: id?.info?.price || "",
       description: id?.info?.description || "",
       image: id?.info?.image || "",
-      category: id?.info?.ca || "",
+      category: id?.info?.category || "",
     },
     validationSchema: Yup.object({
-      title: Yup.string()
-        .min(5, "Must be atleast 5 characters")
-        .max(15, "Must be 15 characters or less")
-        .required("Required"),
+      title: Yup.string().required("Required"),
       price: Yup.number().required("Required"),
       image: Yup.string().required("Required"),
-      description: Yup.string()
-        .min(10, "Must be atleast 5 characters")
-        .max(100, "Must be 15 characters or less")
-        .required("Required"),
-      category: Yup.string()
-        .min(3, "Must be atleast 5 characters")
-        .max(15, "Must be 15 characters or less")
-        .required("Required"),
+      description: Yup.string().required("Required"),
+      category: Yup.string().required("Required"),
     }),
 
     onSubmit: async (values) => {
@@ -53,7 +46,7 @@ export const UpdateProduct = (id) => {
     },
   });
 
-  // console.log(formik.errors);
+  console.log(formik.errors);
 
   return (
     <>

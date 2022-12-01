@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Modal from "react-modal";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import classes from "..//..//assets/style/productList.module.css";
@@ -6,9 +7,19 @@ import axios from "../../axios";
 import { NavBar } from "..//UI/NavBar";
 import Rating from "@mui/material/Rating";
 import { UpdateProduct } from "../Dashboard/UpdateProduct";
-// import { AddToCart } from "./AddToCart";
+import edit from "..//..//assets/icon/edit48.png";
 
 export const ProductPage = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const setModalIsOpenToTrue = () => {
+    setModalIsOpen(true);
+  };
+
+  const setModalIsOpenToFalse = () => {
+    setModalIsOpen(false);
+  };
+
   const { id } = useParams();
   const [info, setInfo] = useState({});
 
@@ -30,10 +41,6 @@ export const ProductPage = () => {
   return (
     <>
       <NavBar />
-      <div>
-        <UpdateProduct id={id} info={info} />
-        {/* {console.log(id)} */}
-      </div>
       <div className={classes.container}>
         <div className={classes.product}>
           <div>
@@ -48,7 +55,13 @@ export const ProductPage = () => {
                   info?.category?.slice(1)}
                 )
               </h5>
+              <div className={classes.modal}>
+                <button onClick={setModalIsOpenToTrue}>
+                  <img src={edit} alt="" />
+                </button>
+              </div>
             </div>
+
             <div className={classes.rating}>
               <h4> {info?.rating?.rate}</h4>
               <Rating
@@ -92,6 +105,12 @@ export const ProductPage = () => {
         pauseOnHover
         theme="light"
       />
+      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+        <button onClick={setModalIsOpenToFalse} className={classes.button}>
+          x
+        </button>
+        <UpdateProduct id={id} info={info} />
+      </Modal>
     </>
   );
 };
