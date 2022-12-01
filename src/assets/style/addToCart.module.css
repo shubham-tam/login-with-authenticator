@@ -1,4 +1,4 @@
-.btn {
+/* .btn {
   padding: 10px;
   width: 140px;
   background-color: #3498db;
@@ -12,4 +12,13 @@
 
 .btn:hover {
   background-color: #1578ba;
+} */
+
+.form {
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }

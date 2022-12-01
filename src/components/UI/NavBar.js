@@ -4,6 +4,7 @@ import cart from "..//..//assets/icon/cart.png";
 import { Cart } from "./Cart";
 import classes from "..//..//assets/style/nav.module.css";
 import "..//..//App.css";
+import { AddNewProduct } from "../Pages/AddNewProduct";
 
 export const NavBar = () => {
   const [showCart, setShowCart] = useState(false);
@@ -16,6 +17,17 @@ export const NavBar = () => {
     <>
       <div>
         <ul>
+          <li>
+            <NavLink
+              to="/addnewproduct"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              className={classes.end}
+            >
+              {" "}
+              Add New Product
+            </NavLink>
+          </li>
           <li style={{ float: "right" }}>
             <NavLink className={classes.listItems}>
               <button onClick={cartToggler} className={classes.btn}>
