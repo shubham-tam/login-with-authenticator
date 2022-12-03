@@ -26,7 +26,7 @@ export const Home = () => {
     });
   };
 
-  console.log(products);
+  // console.log(products);
 
   useEffect(() => {
     fetchData();

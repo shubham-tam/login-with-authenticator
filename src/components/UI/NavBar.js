@@ -6,9 +6,13 @@ import classes from "..//..//assets/style/nav.module.css";
 import "..//..//App.css";
 
 export const NavBar = () => {
+  const [showCart, setShowCart] = useState(false);
   let location = useLocation();
 
-  const [showCart, setShowCart] = useState(false);
+  const handleClick = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
   const cartToggler = () => {
     showCart ? setShowCart(false) : setShowCart(true);
@@ -35,18 +39,13 @@ export const NavBar = () => {
               <button onClick={cartToggler} className={classes.btn}>
                 <img src={cart} alt="cart" className={classes.cartImg} />
               </button>
-
               {showCart && <Cart />}
             </NavLink>
-            <NavLink
-              to="/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={classes.end}
-            >
+
+            <button onClick={handleClick} className={classes.end}>
               {" "}
-              Log Out
-            </NavLink>
+              Logout
+            </button>
           </li>
         </ul>
       </div>
