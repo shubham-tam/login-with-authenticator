@@ -56,7 +56,10 @@ export const ProductPage = () => {
                 )
               </h5>
               <div className={classes.modal}>
-                <button onClick={setModalIsOpenToTrue}>
+                <button
+                  onClick={setModalIsOpenToTrue}
+                  style={{ cursor: "pointer" }}
+                >
                   <img src={edit} alt="" />
                 </button>
               </div>
@@ -105,7 +108,11 @@ export const ProductPage = () => {
         pauseOnHover
         theme="light"
       />
-      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+      <Modal
+        isOpen={modalIsOpen}
+        ariaHideApp={false}
+        className={classes.modalPage}
+      >
         <button onClick={setModalIsOpenToFalse} className={classes.button}>
           x
         </button>

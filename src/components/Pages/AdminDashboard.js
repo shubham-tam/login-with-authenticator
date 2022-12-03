@@ -24,7 +24,7 @@ export const AdminDashboard = () => {
         {addNewProductActive && <AddNewProduct />}
       </div> */}
 
-      {/* <AddNewProduct /> */}
+      <AddNewProduct />
       <br />
       <br />
       <br />

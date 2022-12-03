@@ -52,6 +52,8 @@ export const UpdateProduct = (id) => {
     <>
       <form onSubmit={formik.handleSubmit}>
         <div className={classes.form}>
+          <h2> Currently Editing : {id?.info?.title || ""}</h2>
+
           <input
             label="Product Title"
             id="title"
@@ -61,7 +63,6 @@ export const UpdateProduct = (id) => {
             placeholder="Enter the name of the product"
             onChange={(e) => formik.handleChange(e)}
           />
-
           <input
             label="Product Price"
             value={formik.values.price}
@@ -71,7 +72,6 @@ export const UpdateProduct = (id) => {
             placeholder="Enter the price of the product"
             onChange={(e) => formik.handleChange(e)}
           />
-
           <input
             label="Product Images"
             id="image"
@@ -81,7 +81,6 @@ export const UpdateProduct = (id) => {
             placeholder="Please provide image urls"
             onChange={(e) => formik.handleChange(e)}
           />
-
           <input
             label="Product Description"
             name="description"
@@ -92,7 +91,6 @@ export const UpdateProduct = (id) => {
             className={classes.descriptionBox}
             onChange={(e) => formik.handleChange(e)}
           />
-
           <input
             label="Product Category"
             name="category"
@@ -101,7 +99,6 @@ export const UpdateProduct = (id) => {
             placeholder="Enter the category of the product"
             onChange={(e) => formik.handleChange(e)}
           />
-
           <button onClick={(e) => formik.handleSubmit(e)} type="buton">
             Submit
           </button>

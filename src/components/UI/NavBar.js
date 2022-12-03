@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import cart from "..//..//assets/icon/cart.png";
 import { Cart } from "./Cart";
 import classes from "..//..//assets/style/nav.module.css";
 import "..//..//App.css";
 
 export const NavBar = () => {
+  let location = useLocation();
+
   const [showCart, setShowCart] = useState(false);
 
   const cartToggler = () => {
@@ -16,10 +18,17 @@ export const NavBar = () => {
     <>
       <div>
         <ul>
-          <NavLink to="/Admin" className={classes.left}>
-            {" "}
-            Admin Dashboard
-          </NavLink>
+          {location.pathname === "/Admin" ? (
+            <NavLink to="/" className={classes.left}>
+              {" "}
+              Home
+            </NavLink>
+          ) : (
+            <NavLink to="/Admin" className={classes.left}>
+              {" "}
+              Admin Dashboard
+            </NavLink>
+          )}
 
           <li style={{ float: "right" }}>
             <NavLink className={classes.listItems}>

@@ -48,8 +48,6 @@ export const Home = () => {
         </div>
       </div>
 
-      {/* {products && <Footer />} */}
-
       <ToastContainer
         position="top-right"
         autoClose={2000}
