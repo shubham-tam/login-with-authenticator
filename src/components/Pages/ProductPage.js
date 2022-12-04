@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
 import classes from "..//..//assets/style/productList.module.css";
 import axios from "../../axios";
 import { NavBar } from "..//UI/NavBar";
@@ -108,6 +110,7 @@ export const ProductPage = () => {
         pauseOnHover
         theme="light"
       />
+
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}

@@ -4,7 +4,6 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #3498db;
-  /* float: le; */
 }
 
 .left {
@@ -38,12 +37,15 @@ ul {
 }
 .end {
   float: right;
-  padding: 16px;
+  padding: 18px;
   margin: 0;
   color: white;
+  background-color: #3498db;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
+  border: 0;
+  cursor: pointer;
 }
 
 .end:hover {
