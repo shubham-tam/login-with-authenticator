@@ -89,10 +89,6 @@ export const ProductPage = () => {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <h3>INSERT FAKE REVIEWS</h3>
       <ToastContainer
         position="top-right"
         autoClose={2000}

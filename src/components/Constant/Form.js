@@ -5,8 +5,6 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 
 export const Form = (id) => {
-  // console.log(info);
-
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -51,14 +49,12 @@ export const Form = (id) => {
             price: values.price,
             description: values.description,
             image: values.image,
-            category: values.catgory,
+            category: values.category,
           }),
         });
       }
     },
   });
-
-  // console.log(formik.errors);
 
   return (
     <>
@@ -105,7 +101,6 @@ export const Form = (id) => {
             placeholder="Product description"
             value={formik.values.description}
             onChange={(e) => formik.handleChange(e)}
-            // className={classes.descriptionBox}
           />
           <input
             name="category"

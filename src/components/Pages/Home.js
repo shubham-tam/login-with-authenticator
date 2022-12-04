@@ -6,7 +6,6 @@ import "..//..//App.css";
 import { Item } from "../UI/Item";
 import "..//..//assets/style/style.css";
 import { NavBar } from "..//UI/NavBar";
-// import { Footer } from "./Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -26,8 +25,6 @@ export const Home = () => {
         });
     });
   };
-
-  // console.log(products);
 
   useEffect(() => {
     fetchData();

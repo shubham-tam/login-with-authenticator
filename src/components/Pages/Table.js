@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ProductPage } from "./ProductPage";
 import classes from "..//..//assets/style/table.module.css";
 import edit from "..//..//assets/icon/edit48.png";
-import trash from "..//..//assets/icon/trash.png";
 import { Form } from "../Constant/Form";
 import Modal from "react-modal";
 import { DeleteItem } from "../UI/DeleteItem";
@@ -70,7 +69,7 @@ export const Table = () => {
                         <img src={edit} alt="" />
                       </button>
                       <button style={{ cursor: "pointer" }}>
-                        <DeleteItem id={item?.id} />
+                        <DeleteItem id={item?.id} title={item.title} />
                       </button>
                     </td>
                   </tr>
@@ -85,7 +84,6 @@ export const Table = () => {
                     >
                       x
                     </button>
-                    {/* {console.log(item)} */}
                     <Form id={item?.id} info={item} />
                   </Modal>
                 </>
