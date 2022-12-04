@@ -1,0 +1,15 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* width: 57%; */
+}
+
+.editBtn {
+  background-color: transparent;
+  background-color: blue;
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}

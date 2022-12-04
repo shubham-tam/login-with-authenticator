@@ -3,17 +3,15 @@ import Modal from "react-modal";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-
 import classes from "..//..//assets/style/productList.module.css";
 import axios from "../../axios";
 import { NavBar } from "..//UI/NavBar";
 import Rating from "@mui/material/Rating";
-import { UpdateProduct } from "../Dashboard/UpdateProduct";
 import edit from "..//..//assets/icon/edit48.png";
+import { Form } from "..//Constant/Form";
 
 export const ProductPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
   };
@@ -37,8 +35,6 @@ export const ProductPage = () => {
     };
     fetchProductInformation();
   }, [id]);
-
-  // console.log("info", info);
 
   return (
     <>
@@ -93,7 +89,6 @@ export const ProductPage = () => {
           </div>
         </div>
       </div>
-
       <br />
       <br />
       <br />
@@ -110,7 +105,6 @@ export const ProductPage = () => {
         pauseOnHover
         theme="light"
       />
-
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
@@ -119,7 +113,7 @@ export const ProductPage = () => {
         <button onClick={setModalIsOpenToFalse} className={classes.button}>
           x
         </button>
-        <UpdateProduct id={id} info={info} />
+        <Form id={id} info={info} />
       </Modal>
     </>
   );
