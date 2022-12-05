@@ -3,12 +3,12 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #3498db;
+  background-color: #003049;
 }
 
 .left {
   float: left;
-  padding: 16px;
+  padding: 18px;
   margin: 0;
   color: white;
   font-weight: bold;
@@ -17,7 +17,7 @@ ul {
 }
 
 .left:hover {
-  background-color: #1578ba;
+  background-color: #f77f00;
 }
 
 .listItems {
@@ -28,26 +28,28 @@ ul {
 }
 
 .listItems .cartImg {
-  padding: 10px 14px;
+  padding: 12px 14px;
 }
 
 .btn {
   background-color: transparent;
   border: 0;
 }
+
 .end {
   float: right;
   padding: 18px;
   margin: 0;
   color: white;
-  background-color: #3498db;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   border: 0;
   cursor: pointer;
+  font-size: 16px;
+  background-color: #003049;
 }
 
 .end:hover {
-  background-color: #1578ba;
+  background-color: #f77f00;
 }

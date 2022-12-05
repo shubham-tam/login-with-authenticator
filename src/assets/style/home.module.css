@@ -1,3 +1,10 @@
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: #f0edee;
+}
+
 .listItems {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -1,5 +1,6 @@
 import trash from "..//..//assets/icon/trash.png";
 import { toast } from "react-toastify";
+import classes from "..//..//assets/style/delete.module.css";
 
 export const DeleteItem = (id) => {
   const handleDelete = async () => {
@@ -11,9 +12,11 @@ export const DeleteItem = (id) => {
 
   return (
     <>
-      <button onClick={() => handleDelete()}>
-        <img src={trash} alt="Delete icon" />
-      </button>
+      <div className={classes.body}>
+        <button onClick={() => handleDelete()}>
+          <img src={trash} alt="Delete icon" />
+        </button>
+      </div>
     </>
   );
 };

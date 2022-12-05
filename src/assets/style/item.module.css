@@ -1,16 +1,11 @@
 .item {
   width: 300px;
-  height: 470px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border-radius: 5px;
-}
-
-.image {
-  width: 200px;
-  height: 200px;
 }
 
 .imgBg {
@@ -20,7 +15,31 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #003049;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.titlePrice h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #003049;
+  height: 70px;
+}
+
+.titlePrice h4:hover {
+  color: #d62828;
+}
+
+.alignment {
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
 .headers {
@@ -39,33 +58,12 @@
   padding: 10px;
 }
 
-.titlePrice h4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #343434;
-  /* color: red; */
-  height: 70px;
-}
-
-.titlePrice h4:hover {
-  color: #3498db;
-}
-
-.alignment {
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-
 .price {
   display: flex;
   justify-content: center;
   padding: 5px;
-  width: 50%;
-  background-color: #3498db;
+  width: 40%;
+  background-color: #db3d3d;
   border-radius: 4px;
   text-align: center;
 }
@@ -94,6 +92,5 @@
 
 .rateNum {
   align-self: center;
-
   color: #faaf00;
 }

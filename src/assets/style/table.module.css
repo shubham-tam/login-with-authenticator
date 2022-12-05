@@ -12,10 +12,33 @@ tr {
 .table td,
 th {
   padding: 10px;
-  background-color: rgb(201, 195, 195);
 }
 
 .table table {
   border-collapse: collapse;
   width: 100%;
+}
+
+.table img {
+  width: 24px;
+  height: 24px;
+}
+
+.links {
+  text-decoration: none;
+  color: #003049;
+  font-weight: bold;
+}
+.links:hover {
+  color: #f77f00;
+}
+
+.tableButtons {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.tableButtons:hover {
+  transform: scale(1.3);
 }

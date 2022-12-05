@@ -6,7 +6,8 @@ import classes from "..//..//assets/style/table.module.css";
 import edit from "..//..//assets/icon/edit48.png";
 import { Form } from "../Constant/Form";
 import Modal from "react-modal";
-import { DeleteItem } from "../UI/DeleteItem";
+import { DeleteItem } from "../Actions/DeleteItem";
+import { color } from "@mui/system";
 
 export const Table = () => {
   const [products, setProducts] = useState([]);
@@ -45,7 +46,10 @@ export const Table = () => {
       <div className={classes.body}>
         <table className={classes.table}>
           <tbody>
-            <tr>
+            <tr
+              className={classes.tableRowData}
+              style={{ backgroundColor: "#dee2e6" }}
+            >
               <th>Product ID </th>
               <th>Product Title</th>
               <th>Options</th>
@@ -55,20 +59,45 @@ export const Table = () => {
               return (
                 <>
                   <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>
-                      <Link to={`/` + item.id} element={<ProductPage />}>
+                    <td
+                      style={
+                        item.id % 2 === 0
+                          ? { backgroundColor: "#dee2e6" }
+                          : { backgroundColor: "#e9ecef" }
+                      }
+                    >
+                      {item.id}
+                    </td>
+                    <td
+                      style={
+                        item.id % 2 === 0
+                          ? { backgroundColor: "#dee2e6" }
+                          : { backgroundColor: "#e9ecef" }
+                      }
+                    >
+                      <Link
+                        to={`/` + item.id}
+                        element={<ProductPage />}
+                        className={classes.links}
+                      >
                         {item.title}
                       </Link>
                     </td>
-                    <td>
+                    <td
+                      style={
+                        item.id % 2 === 0
+                          ? { backgroundColor: "#dee2e6" }
+                          : { backgroundColor: "#e9ecef" }
+                      }
+                    >
                       <button
                         onClick={setModalIsOpenToTrue}
-                        style={{ cursor: "pointer" }}
+                        className={classes.tableButtons}
                       >
                         <img src={edit} alt="" />
                       </button>
-                      <button style={{ cursor: "pointer" }}>
+
+                      <button className={classes.tableButtons}>
                         <DeleteItem id={item?.id} title={item.title} />
                       </button>
                     </td>

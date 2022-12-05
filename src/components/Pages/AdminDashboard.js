@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavBar } from "../UI/NavBar";
 import Modal from "react-modal";
 import { Form } from "../Constant/Form";
 import add from "..//../assets/icon/add.png";
 import { Table } from "./Table";
 import classes from "..//..//assets/style/adminDashboard.module.css";
+import { Footer } from "./Footer";
 
 export const AdminDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -16,6 +18,12 @@ export const AdminDashboard = () => {
   const setModalIsOpenToFalse = () => {
     setModalIsOpen(false);
   };
+
+  useEffect(() => {
+    setInterval(() => {
+      setShowFooter(true);
+    }, 1000);
+  }, []);
 
   return (
     <>
@@ -31,9 +39,19 @@ export const AdminDashboard = () => {
           </div>
         </button>
         <Table />
+        <br />
+        <br />
+        {showFooter && <Footer />}
       </div>
-      <Modal isOpen={modalIsOpen} ariaHideApp={false}>
-        <button onClick={setModalIsOpenToFalse}>x</button>
+
+      <Modal
+        isOpen={modalIsOpen}
+        ariaHideApp={false}
+        className={classes.modalPage}
+      >
+        <button onClick={setModalIsOpenToFalse} className={classes.modalButton}>
+          x
+        </button>
         <Form />
       </Modal>
     </>

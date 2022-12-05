@@ -22,15 +22,15 @@ export const NavBar = () => {
     <>
       <div>
         <ul>
-          {location.pathname === "/Admin" ? (
-            <NavLink to="/" className={classes.left}>
-              {" "}
-              Home
-            </NavLink>
-          ) : (
+          {location.pathname === "/" ? (
             <NavLink to="/Admin" className={classes.left}>
               {" "}
               Admin Dashboard
+            </NavLink>
+          ) : (
+            <NavLink to="/" className={classes.left}>
+              {" "}
+              Home
             </NavLink>
           )}
 

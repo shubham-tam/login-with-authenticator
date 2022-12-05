@@ -6,9 +6,11 @@ import "..//..//App.css";
 import { Item } from "../UI/Item";
 import "..//..//assets/style/style.css";
 import { NavBar } from "..//UI/NavBar";
+import { Footer } from "./Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
+  const [showFooter, setShowFooter] = useState(false);
 
   const fetchData = (status) => {
     new Promise((resolve) => {
@@ -30,20 +32,37 @@ export const Home = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setInterval(() => {
+      setShowFooter(true);
+    }, 1000);
+  }, []);
+
   return (
     <>
       <NavBar />
-      <div style={{ backgroundColor: "#f0edee" }}>
-        <h1> Product List </h1>
-        <div className={classes.listItems}>
-          {products.map((item) => {
-            return (
-              <li key={item.id}>
-                <Item id={item.id} item={item} />
-              </li>
-            );
-          })}
+      <div className={classes.components}>
+        <div>
+          <h1
+            style={{
+              color: "#d62828",
+              backgroundColor: "#f0edee",
+            }}
+          >
+            {" "}
+            Product List{" "}
+          </h1>
+          <div className={classes.listItems}>
+            {products.map((item) => {
+              return (
+                <li key={item.id}>
+                  <Item id={item.id} item={item} />
+                </li>
+              );
+            })}
+          </div>
         </div>
+        {showFooter && <Footer />}
       </div>
 
       <ToastContainer

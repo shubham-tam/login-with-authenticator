@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-import classes from "..//..//assets/style/updateProduct.module.css";
+import classes from "..//..//assets/style/form.module.css";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 
@@ -15,20 +15,15 @@ export const Form = (id) => {
       category: id?.info?.category || "",
     },
     validationSchema: Yup.object({
-      title: Yup.string().required("Title is required."),
-      price: Yup.number().required("Required"),
-      image: Yup.string().required("Required"),
-      description: Yup.string().required("Required"),
-      category: Yup.string().required("Required"),
+      title: Yup.string().required("Product Title is required."),
+      price: Yup.number().required("Product Price is required"),
+      image: Yup.string().required("Product Image url is required"),
+      description: Yup.string().required("Product Description is required"),
+      category: Yup.string().required("Product Category is required"),
     }),
 
     onSubmit: async (values) => {
-      console.log("values here", values);
-      console.log("idddddd here", id?.info?.id);
-      console.log("innside the console of onSubmit loop");
-
       if (id?.info?.id) {
-        console.log("checking id inside loop");
         await fetch(`https://fakestoreapi.com/products/${id.info.id}`, {
           method: "PATCH",
           body: JSON.stringify({
@@ -61,7 +56,7 @@ export const Form = (id) => {
       <form>
         <div className={classes.form}>
           {id?.info?.title ? (
-            <h2> Currently Editing : {id?.info?.title || ""}</h2>
+            <h2> {id?.info?.title || ""}</h2>
           ) : (
             <h2> Add a product</h2>
           )}
@@ -75,6 +70,10 @@ export const Form = (id) => {
             value={formik.values.title}
             onChange={(e) => formik.handleChange(e)}
           />
+          {formik.touched.title && formik.errors.title ? (
+            <span className={classes.error}>{formik.errors.title}</span>
+          ) : null}
+
           <input
             name="price"
             type="number"
@@ -84,6 +83,10 @@ export const Form = (id) => {
             value={formik.values.price}
             onChange={(e) => formik.handleChange(e)}
           />
+          {formik.touched.price && formik.errors.price ? (
+            <span className={classes.error}>{formik.errors.price}</span>
+          ) : null}
+
           <input
             name="image"
             type="text"
@@ -93,7 +96,12 @@ export const Form = (id) => {
             value={formik.values.image}
             onChange={(e) => formik.handleChange(e)}
           />
-          <input
+
+          {formik.touched.image && formik.errors.image ? (
+            <span className={classes.error}>{formik.errors.image}</span>
+          ) : null}
+
+          <textarea
             name="description"
             type="text"
             id="description"
@@ -102,6 +110,10 @@ export const Form = (id) => {
             value={formik.values.description}
             onChange={(e) => formik.handleChange(e)}
           />
+          {formik.touched.description && formik.errors.description ? (
+            <span className={classes.error}>{formik.errors.description}</span>
+          ) : null}
+
           <input
             name="category"
             type="text"
@@ -111,13 +123,27 @@ export const Form = (id) => {
             value={formik.values.category}
             onChange={(e) => formik.handleChange(e)}
           />
-          <button
-            onClick={(e) => formik.handleSubmit(e)}
-            type="buton"
-            style={{ cursor: "pointer" }}
-          >
-            Submit
-          </button>
+          {formik.touched.category && formik.errors.category ? (
+            <span className={classes.error}>{formik.errors.category}</span>
+          ) : null}
+
+          {id?.id ? (
+            <button
+              onClick={(e) => formik.handleSubmit(e)}
+              type="buton"
+              className={classes.formBtn}
+            >
+              Update product
+            </button>
+          ) : (
+            <button
+              onClick={(e) => formik.handleSubmit(e)}
+              type="buton"
+              className={classes.formBtn}
+            >
+              Add Product
+            </button>
+          )}
         </div>
       </form>
     </>

@@ -1,18 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
-
-:root {
-  --button-color: #3498db;
-}
-
-.header {
-  text-align: center;
-  color: var(--button-color);
-  margin-bottom: 20px;
-}
-
 .body {
-  background-color: #f9fafb;
-  font-family: "open-sans", sans-serif;
+  background-color: #f0edee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,58 +11,60 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  height: 300px;
   width: 400px;
 }
 
-.form {
-  padding: 30px 40px;
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
 
-.form-control {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-.form-control label {
-  color: #777;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-control input {
-  border: 2px solid #f0f0f0f0;
-  border-radius: 4px;
-  display: block;
-  opacity: 60%;
-  width: 100%;
+.inputs h3 {
   padding: 10px;
-  font-size: 14px;
 }
 
-.form-control input:focus {
-  outline: 0;
-  border-color: var(--button-color);
+.inputs input {
+  height: 40px;
+  width: 80%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #003049;
 }
 
-.form button {
-  background-color: #fff;
-  border: 0 solid #e2e8f0;
-  border-radius: 5px;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 10px;
+.inputs input::placeholder {
+  font-size: 12px;
   text-align: center;
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
-  touch-action: manipulation;
-  border: 1.5px solid var(--button-color);
-  color: var(--button-color);
-  width: 100%;
 }
 
-.form button:hover {
-  background-color: var(--button-color);
+.inputs input:focus {
+  border: 1px solid #003049;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 80%;
+  height: 40px;
+  border: 1px solid #003049;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #003049;
   color: #fff;
+  font-weight: bold;
+}
+
+.error {
+  color: #d62828;
+  font-size: 12px;
+  padding: 0;
+  margin-top: -20px;
 }

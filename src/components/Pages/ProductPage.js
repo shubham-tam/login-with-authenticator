@@ -3,12 +3,15 @@ import Modal from "react-modal";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import classes from "..//..//assets/style/productList.module.css";
+import classes from "..//..//assets/style/productPage.module.css";
 import axios from "../../axios";
 import { NavBar } from "..//UI/NavBar";
 import Rating from "@mui/material/Rating";
 import edit from "..//..//assets/icon/edit48.png";
 import { Form } from "..//Constant/Form";
+import { Footer } from "./Footer";
+import { CommentsPage } from "../UI/CommentsPage";
+import { DummyColorProductsAndSize } from "../UI/DummyColorProducts";
 
 export const ProductPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -54,10 +57,7 @@ export const ProductPage = () => {
                 )
               </h5>
               <div className={classes.modal}>
-                <button
-                  onClick={setModalIsOpenToTrue}
-                  style={{ cursor: "pointer" }}
-                >
+                <button onClick={setModalIsOpenToTrue}>
                   <img src={edit} alt="" />
                 </button>
               </div>
@@ -86,9 +86,12 @@ export const ProductPage = () => {
                 info?.description?.slice(1)}
             </div>
             <div className={classes.priceAndAddToCart}>${info?.price}</div>
+            <DummyColorProductsAndSize />
           </div>
         </div>
+        <CommentsPage />
       </div>
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -106,7 +109,7 @@ export const ProductPage = () => {
         ariaHideApp={false}
         className={classes.modalPage}
       >
-        <button onClick={setModalIsOpenToFalse} className={classes.button}>
+        <button onClick={setModalIsOpenToFalse} className={classes.modalButton}>
           x
         </button>
         <Form id={id} info={info} />
