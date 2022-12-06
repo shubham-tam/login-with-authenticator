@@ -1,27 +1,3 @@
-.body {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.addNTable {
-  overflow: hidden;
-  padding: 10px;
-  justify-content: flex-end;
-}
-
-.addBtn {
-  background-color: transparent;
-  float: right;
-}
-
-.addProductWithIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
 .modalPage {
   position: absolute;
   inset: 20px;

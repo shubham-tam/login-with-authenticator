@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.min.css";
 import classes from "..//..//assets/style/home.module.css";
 import "..//..//App.css";
 import { Item } from "../UI/Item";
-import "..//..//assets/style/style.css";
 import { NavBar } from "..//UI/NavBar";
 import { Footer } from "./Footer";
 
@@ -47,6 +46,8 @@ export const Home = () => {
             style={{
               color: "#d62828",
               backgroundColor: "#f0edee",
+              textAlign: "center",
+              padding: "40px",
             }}
           >
             {" "}

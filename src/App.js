@@ -3,7 +3,6 @@ import { AdminDashboard } from "./components/Pages/AdminDashboard";
 import { ProductPage } from "./components/Pages/ProductPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./assets/style/style.css";
 
 function App() {
   return (

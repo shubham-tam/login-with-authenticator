@@ -3,13 +3,14 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { ProductPage } from "./ProductPage";
 import classes from "..//..//assets/style/table.module.css";
+import modalCss from "..//..//assets/style/commonModalPage.module.css";
 import { Form } from "../Constant/Form";
 import Modal from "react-modal";
 import { DeleteItem } from "../Actions/DeleteItem";
 
 export const Table = () => {
   const [products, setProducts] = useState([]);
-  const [productId, setProductId] = useState({});
+  const [productInfo, setProductInfo] = useState({});
   const data = useRef([]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -41,12 +42,12 @@ export const Table = () => {
     fetchData();
   }, []);
 
-  const handler = (id) => {
-    setProductId(id);
+  const handler = (info) => {
+    setProductInfo(info);
   };
 
-  if (products.includes(productId)) {
-    data.current = productId;
+  if (products.includes(productInfo)) {
+    data.current = productInfo;
   }
 
   return (
@@ -57,7 +58,7 @@ export const Table = () => {
             <tr style={{ backgroundColor: "#003049", color: "#fff" }}>
               <th>Product ID </th>
               <th>Product Title</th>
-              <th>Options</th>
+              <th>Actions</th>
             </tr>
 
             {products.map((item) => {
@@ -120,15 +121,15 @@ export const Table = () => {
                   <Modal
                     isOpen={modalIsOpen}
                     ariaHideApp={false}
-                    className={classes.modalPage}
+                    className={modalCss.modalPage}
                   >
                     <button
                       onClick={setModalIsOpenToFalse}
-                      className={classes.button}
+                      className={modalCss.modalButton}
                     >
                       x
                     </button>
-                    <Form id={data.current} info={data.current} />
+                    <Form info={data.current} />
                   </Modal>
                 </>
               );

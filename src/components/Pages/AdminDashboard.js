@@ -6,6 +6,7 @@ import add from "..//../assets/icon/add.png";
 import { Table } from "./Table";
 import classes from "..//..//assets/style/adminDashboard.module.css";
 import { Footer } from "./Footer";
+import modalCss from "..//..//assets/style/commonModalPage.module.css";
 
 export const AdminDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -40,20 +41,22 @@ export const AdminDashboard = () => {
               <img src={add} alt="Add new product button" />
             </div>
           </button>
-          <div className={classes.invisibleDiv}>kok</div>
         </div>
         <Table />
         <br />
         <br />
-        {showFooter && <Footer />}
       </div>
+      {showFooter && <Footer />}
 
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
-        className={classes.modalPage}
+        className={modalCss.modalPage}
       >
-        <button onClick={setModalIsOpenToFalse} className={classes.modalButton}>
+        <button
+          onClick={setModalIsOpenToFalse}
+          className={modalCss.modalButton}
+        >
           x
         </button>
         <Form />

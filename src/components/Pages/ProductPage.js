@@ -11,6 +11,7 @@ import { Form } from "..//Constant/Form";
 import { Footer } from "./Footer";
 import { CommentsPage } from "../UI/CommentsPage";
 import { DummyColorProductsAndSize } from "../UI/DummyColorProducts";
+import modalCss from "..//..//assets/style/commonModalPage.module.css";
 
 export const ProductPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -114,9 +115,12 @@ export const ProductPage = () => {
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
-        className={classes.modalPage}
+        className={modalCss.modalPage}
       >
-        <button onClick={setModalIsOpenToFalse} className={classes.modalButton}>
+        <button
+          onClick={setModalIsOpenToFalse}
+          className={modalCss.modalButton}
+        >
           x
         </button>
         <Form id={id} info={info} />

@@ -36,12 +36,8 @@ textarea:focus {
 }
 
 .form .error {
-  /* display: flex; */
-  /* justify-content: flex-start; */
   color: #d62828;
   float: left;
-  /* gap: 0; */
-  /* margin-left: -400px; */
 }
 
 .formBtn {
