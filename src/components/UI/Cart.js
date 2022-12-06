@@ -17,7 +17,6 @@ export const Cart = () => {
     };
     fetchCartItems();
   }, []);
-  console.log(cart);
 
   return (
     <>

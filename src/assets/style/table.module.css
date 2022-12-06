@@ -29,7 +29,14 @@ th {
   color: #003049;
   font-weight: bold;
 }
-.links:hover {
+
+.linksTitle {
+  text-decoration: none;
+  color: #003049;
+  font-weight: bold;
+}
+
+.linksTitle:hover {
   color: #f77f00;
 }
 
@@ -41,4 +48,8 @@ th {
 
 .tableButtons:hover {
   transform: scale(1.3);
+}
+
+.icons:hover {
+  fill: #f77f00;
 }

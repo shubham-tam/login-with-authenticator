@@ -8,7 +8,7 @@ export const Form = (id) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      title: id?.info?.title || "",
+      title: id?.info?.title || id?.title || "",
       price: id?.info?.price || "",
       description: id?.info?.description || "",
       image: id?.info?.image || "",
@@ -36,7 +36,6 @@ export const Form = (id) => {
         });
         toast.success(`${values.title} updated, please check the payload tab.`);
       } else {
-        console.log("else");
         await fetch("https://fakestoreapi.com/products", {
           method: "POST",
           body: JSON.stringify({

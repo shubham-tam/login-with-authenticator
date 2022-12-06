@@ -113,3 +113,7 @@
   background: #003049;
   color: #fff;
 }
+
+.icons:hover {
+  fill: #f77f00;
+}

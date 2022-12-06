@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { ProductPage } from "./ProductPage";
 import classes from "..//..//assets/style/table.module.css";
-import edit from "..//..//assets/icon/edit48.png";
 import { Form } from "../Constant/Form";
 import Modal from "react-modal";
 import { DeleteItem } from "../Actions/DeleteItem";
-import { color } from "@mui/system";
 
 export const Table = () => {
   const [products, setProducts] = useState([]);
+  const [productId, setProductId] = useState({});
+  const data = useRef([]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const setModalIsOpenToTrue = () => {
@@ -41,15 +41,20 @@ export const Table = () => {
     fetchData();
   }, []);
 
+  const handler = (id) => {
+    setProductId(id);
+  };
+
+  if (products.includes(productId)) {
+    data.current = productId;
+  }
+
   return (
     <>
       <div className={classes.body}>
         <table className={classes.table}>
           <tbody>
-            <tr
-              className={classes.tableRowData}
-              style={{ backgroundColor: "#dee2e6" }}
-            >
+            <tr style={{ backgroundColor: "#003049", color: "#fff" }}>
               <th>Product ID </th>
               <th>Product Title</th>
               <th>Options</th>
@@ -65,6 +70,7 @@ export const Table = () => {
                           ? { backgroundColor: "#dee2e6" }
                           : { backgroundColor: "#e9ecef" }
                       }
+                      className={classes.links}
                     >
                       {item.id}
                     </td>
@@ -78,7 +84,7 @@ export const Table = () => {
                       <Link
                         to={`/` + item.id}
                         element={<ProductPage />}
-                        className={classes.links}
+                        className={classes.linksTitle}
                       >
                         {item.title}
                       </Link>
@@ -94,7 +100,16 @@ export const Table = () => {
                         onClick={setModalIsOpenToTrue}
                         className={classes.tableButtons}
                       >
-                        <img src={edit} alt="" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="24px"
+                          height="24px"
+                          className={classes.icons}
+                          onClick={() => handler(item)}
+                        >
+                          <path d="M21,12a1,1,0,0,0-1,1v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4h6a1,1,0,0,0,0-2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM6,12.76V17a1,1,0,0,0,1,1h4.24a1,1,0,0,0,.71-.29l6.92-6.93h0L21.71,8a1,1,0,0,0,0-1.42L17.47,2.29a1,1,0,0,0-1.42,0L13.23,5.12h0L6.29,12.05A1,1,0,0,0,6,12.76ZM16.76,4.41l2.83,2.83L18.17,8.66,15.34,5.83ZM8,13.17l5.93-5.93,2.83,2.83L10.83,16H8Z" />
+                        </svg>
                       </button>
 
                       <button className={classes.tableButtons}>
@@ -113,7 +128,7 @@ export const Table = () => {
                     >
                       x
                     </button>
-                    <Form id={item?.id} info={item} />
+                    <Form id={data.current} info={data.current} />
                   </Modal>
                 </>
               );

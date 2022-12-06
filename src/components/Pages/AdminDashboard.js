@@ -29,15 +29,19 @@ export const AdminDashboard = () => {
     <>
       <NavBar />
       <div className={classes.body}>
-        <button
-          onClick={setModalIsOpenToTrue}
-          style={{ cursor: "pointer" }}
-          className={classes.editBtn}
-        >
-          <div>
-            Add new: <img src={add} alt="Add new product button" />
-          </div>
-        </button>
+        <div className={classes.addNTable}>
+          <button
+            onClick={setModalIsOpenToTrue}
+            style={{ cursor: "pointer" }}
+            className={classes.addBtn}
+          >
+            <div className={classes.addProductWithIcon}>
+              <h3>Add new product</h3>
+              <img src={add} alt="Add new product button" />
+            </div>
+          </button>
+          <div className={classes.invisibleDiv}>kok</div>
+        </div>
         <Table />
         <br />
         <br />

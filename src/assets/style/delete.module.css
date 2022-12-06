@@ -3,7 +3,12 @@
   border: 0;
 }
 
-.body img {
+.body svg {
   width: 24px;
   height: 24px;
+  cursor: pointer;
+}
+
+.body svg:hover {
+  fill: #f77f00;
 }
