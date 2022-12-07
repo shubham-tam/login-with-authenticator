@@ -1,56 +1,21 @@
 .body {
   display: flex;
-  flex-direction: column;
-  padding: 10px;
+  justify-content: center;
+}
+.btnDiv {
+  margin-left: 81.7%;
 }
 
 .addNTable {
-  overflow: hidden;
   padding: 10px;
-  justify-content: flex-end;
 }
 
 .addBtn {
   background-color: transparent;
-  float: right;
+  margin-left: auto;
 }
 
 .addProductWithIcon {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-.modalPage {
-  position: absolute;
-  inset: 20px;
-  background: #f0edee;
-  overflow: auto;
-  border-radius: 4px;
-  outline: none;
-  padding: 20px;
-  height: 80vh;
-  width: 60%;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.modalButton {
-  float: right;
-  background: transparent;
-  border: 1px solid #003049;
-  color: #003049;
-  padding: 6px 14px;
-  border-radius: 3px;
-  font-size: 22px;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
-.modalButton:hover {
-  background: #003049;
-  color: #fff;
 }

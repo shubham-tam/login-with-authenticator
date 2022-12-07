@@ -52,11 +52,11 @@ export const Table = () => {
 
   return (
     <>
-      <div className={classes.body}>
+      <div>
         <table className={classes.table}>
           <tbody>
             <tr style={{ backgroundColor: "#003049", color: "#fff" }}>
-              <th>Product ID </th>
+              <th>Product ID</th>
               <th>Product Title</th>
               <th>Actions</th>
             </tr>

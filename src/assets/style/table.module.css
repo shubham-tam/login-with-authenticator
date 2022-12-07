@@ -1,26 +1,6 @@
-.body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.table th,
-tr {
-  border: 0;
-}
-
 .table td,
 th {
   padding: 10px;
-}
-
-.table table {
-  width: 100%;
-}
-
-.table img {
-  width: 24px;
-  height: 24px;
 }
 
 .links {
