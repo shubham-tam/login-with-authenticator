@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+
 import classes from "..//..//assets/style/delete.module.css";
 
 export const DeleteItem = (id) => {

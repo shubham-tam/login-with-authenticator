@@ -1,18 +1,19 @@
 import React from "react";
 import { useFormik } from "formik";
-import classes from "..//..//assets/style/form.module.css";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 
-export const Form = (id) => {
+import classes from "..//..//assets/style/form.module.css";
+
+export const Form = (product) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      title: id?.info?.title || id?.title || "",
-      price: id?.info?.price || "",
-      description: id?.info?.description || "",
-      image: id?.info?.image || "",
-      category: id?.info?.category || "",
+      title: product?.info?.title || product?.title || "",
+      price: product?.info?.price || "",
+      description: product?.info?.description || "",
+      image: product?.info?.image || "",
+      category: product?.info?.category || "",
     },
     validationSchema: Yup.object({
       title: Yup.string().required("Product Title is required."),
@@ -23,8 +24,8 @@ export const Form = (id) => {
     }),
 
     onSubmit: async (values) => {
-      if (id?.info?.id) {
-        await fetch(`https://fakestoreapi.com/products/${id.info.id}`, {
+      if (product?.info?.id) {
+        await fetch(`https://fakestoreapi.com/products/${product.info.id}`, {
           method: "PATCH",
           body: JSON.stringify({
             title: values.title,
@@ -54,8 +55,8 @@ export const Form = (id) => {
     <>
       <form>
         <div className={classes.form}>
-          {id?.info?.title ? (
-            <h2> {id?.info?.title || ""}</h2>
+          {product?.info?.title ? (
+            <h2> {product?.info?.title || ""}</h2>
           ) : (
             <h2> Add a product</h2>
           )}
@@ -126,7 +127,7 @@ export const Form = (id) => {
             <span className={classes.error}>{formik.errors.category}</span>
           ) : null}
 
-          {id?.id ? (
+          {product?.id ? (
             <button
               onClick={(e) => formik.handleSubmit(e)}
               type="buton"

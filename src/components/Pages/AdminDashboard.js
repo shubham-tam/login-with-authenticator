@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
-import { NavBar } from "../UI/NavBar";
 import Modal from "react-modal";
-import { Form } from "../Constant/Form";
-import add from "..//../assets/icon/add.png";
-import { Table } from "./Table";
+
 import classes from "..//..//assets/style/adminDashboard.module.css";
-import { Footer } from "./Footer";
 import modalCss from "..//..//assets/style/commonModalPage.module.css";
+import add from "..//../assets/icon/add.png";
+
+import { NavBar } from "../UI/NavBar";
+import { Form } from "../Constant/Form";
+import { Table } from "./Table";
+import { Footer } from "./Footer";
 
 export const AdminDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
 
-  const setModalIsOpenToTrue = () => {
-    setModalIsOpen(true);
-  };
-
-  const setModalIsOpenToFalse = () => {
-    setModalIsOpen(false);
+  const modalToggler = () => {
+    setModalIsOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -34,7 +32,7 @@ export const AdminDashboard = () => {
           <div className={classes.addNTable}>
             <div className={classes.btnDiv}>
               <button
-                onClick={setModalIsOpenToTrue}
+                onClick={modalToggler}
                 style={{ cursor: "pointer" }}
                 className={classes.addBtn}
               >
@@ -58,10 +56,7 @@ export const AdminDashboard = () => {
         ariaHideApp={false}
         className={modalCss.modalPage}
       >
-        <button
-          onClick={setModalIsOpenToFalse}
-          className={modalCss.modalButton}
-        >
+        <button onClick={modalToggler} className={modalCss.modalButton}>
           x
         </button>
         <Form />

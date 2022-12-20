@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { ProductPage } from "./ProductPage";
+import { ToastContainer, toast } from "react-toastify";
+import Modal from "react-modal";
+
 import classes from "..//..//assets/style/table.module.css";
 import modalCss from "..//..//assets/style/commonModalPage.module.css";
+
 import { Form } from "../Constant/Form";
-import Modal from "react-modal";
 import { DeleteItem } from "../Actions/DeleteItem";
+import { ProductPage } from "./ProductPage";
 
 export const Table = () => {
   const [products, setProducts] = useState([]);
@@ -14,12 +16,9 @@ export const Table = () => {
   const data = useRef([]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const setModalIsOpenToTrue = () => {
-    setModalIsOpen(true);
-  };
 
-  const setModalIsOpenToFalse = () => {
-    setModalIsOpen(false);
+  const modalToggler = () => {
+    setModalIsOpen((prevState) => !prevState);
   };
 
   const fetchData = (status) => {
@@ -39,8 +38,13 @@ export const Table = () => {
   };
 
   useEffect(() => {
+    console.log("test");
     fetchData();
-  }, []);
+
+    if (products.includes(productInfo)) {
+      data.current = productInfo;
+    }
+  }, [productInfo]);
 
   const handler = (info) => {
     setProductInfo(info);
@@ -98,7 +102,7 @@ export const Table = () => {
                       }
                     >
                       <button
-                        onClick={setModalIsOpenToTrue}
+                        onClick={modalToggler}
                         className={classes.tableButtons}
                       >
                         <svg
@@ -124,7 +128,7 @@ export const Table = () => {
                     className={modalCss.modalPage}
                   >
                     <button
-                      onClick={setModalIsOpenToFalse}
+                      onClick={modalToggler}
                       className={modalCss.modalButton}
                     >
                       x

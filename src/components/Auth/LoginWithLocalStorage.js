@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
 import { useFormik } from "formik";
-import App from "../../App";
-import classes from "..//..//assets/style/login.module.css";
+
 import * as Yup from "yup";
 
-function LoginWithLocalStorage() {
+import classes from "..//..//assets/style/login.module.css";
+
+import App from "../../App";
+
+const LoginWithLocalStorage = () => {
   const email = useRef();
   const password = useRef();
   const getEmail = localStorage.getItem("emailData");
@@ -81,5 +84,5 @@ function LoginWithLocalStorage() {
       )}
     </div>
   );
-}
+};
 export default LoginWithLocalStorage;

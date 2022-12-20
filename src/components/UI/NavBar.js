@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+
 import cart from "..//..//assets/icon/cart.png";
-import { Cart } from "./Cart";
 import classes from "..//..//assets/style/nav.module.css";
 import "..//..//App.css";
+
+import { Cart } from "./Cart";
 
 export const NavBar = () => {
   const [showCart, setShowCart] = useState(false);

@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
+
 import classes from "..//..//assets/style/item.module.css";
 
 export const Item = ({ item, id }) => {
   const { price, title, image, rating } = item;
+  console.log(item);
 
   return (
     <>
