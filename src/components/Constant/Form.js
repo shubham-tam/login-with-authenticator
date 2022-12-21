@@ -2,10 +2,13 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import { Location, useLoaderData, useLocation } from "react-router-dom";
 
 import classes from "..//..//assets/style/form.module.css";
 
 export const Form = (product) => {
+  let location = useLocation();
+
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -127,7 +130,7 @@ export const Form = (product) => {
             <span className={classes.error}>{formik.errors.category}</span>
           ) : null}
 
-          {product?.id ? (
+          {product?.id || location.pathname === "/Admin" ? (
             <button
               onClick={(e) => formik.handleSubmit(e)}
               type="buton"
