@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
-import classes from "..//..//assets/style/home.module.css";
-import "..//..//App.css";
+import classes from "../assets/style/home.module.css";
+import "../App.css";
 
-import { Item } from "../UI/Item";
-import { NavBar } from "..//UI/NavBar";
-import { Footer } from "./Footer";
+import { Item } from "../Components/Item";
+import { NavBar } from "../Components/NavBar";
+import { Footer } from "../Components/Footer";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);

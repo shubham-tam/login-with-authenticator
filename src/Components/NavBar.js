@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-import cart from "..//..//assets/icon/cart.png";
-import classes from "..//..//assets/style/nav.module.css";
-import "..//..//App.css";
+import "../App.css";
+import cart from "..//assets/icon/cart.png";
+import classes from "..//assets/style/nav.module.css";
 
 import { Cart } from "./Cart";
 

@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Modal from "react-modal";
 
-import classes from "..//..//assets/style/table.module.css";
-import modalCss from "..//..//assets/style/commonModalPage.module.css";
+import classes from "..//assets/style/table.module.css";
+import modalCss from "..//assets/style/commonModalPage.module.css";
 
-import { Form } from "../Constant/Form";
-import { DeleteItem } from "../Actions/DeleteItem";
-import { ProductPage } from "./ProductPage";
+import { Form } from "../Common/Form";
+import { DeleteItem } from "../Common/DeleteItem";
+import { ProductPage } from "../Pages/ProductPage";
 
 export const Table = () => {
   const [products, setProducts] = useState([]);

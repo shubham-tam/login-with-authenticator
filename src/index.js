@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
-import LoginWithLocalStorage from "./components/Auth/LoginWithLocalStorage";
+
+import LoginWithLocalStorage from "./Auth/LoginWithLocalStorage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<LoginWithLocalStorage />);

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
 
-import classes from "..//..//assets/style/form.module.css";
+import classes from "..//assets/style/form.module.css";
 
 export const Form = (product) => {
   let location = useLocation();

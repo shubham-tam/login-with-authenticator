@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "..//..//assets/style/dummyColorProductsAndSize.module.css";
+import classes from "..//assets/style/dummyColorProductsAndSize.module.css";
 
 export const DummyColorProductsAndSize = () => {
   return (

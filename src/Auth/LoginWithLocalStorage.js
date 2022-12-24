@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 import { useFormik } from "formik";
-
 import * as Yup from "yup";
 
-import classes from "..//..//assets/style/login.module.css";
+import classes from "..//assets/style/login.module.css";
 
-import App from "../../App";
+import App from "../App";
 
 const LoginWithLocalStorage = () => {
   const email = useRef();
@@ -23,7 +22,7 @@ const LoginWithLocalStorage = () => {
       email: Yup.string().required("Email is required"),
       password: Yup.string().required("Password is required"),
     }),
-    onSubmit: () => {
+    onSubmit: (value) => {
       if (
         email.current.value === "aricalot@gmail.com" &&
         password.current.value === "TEST@123"

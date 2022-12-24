@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-import classes from "..//..//assets/style/cart.module.css";
+import classes from "..//assets/style/cart.module.css";
 
-import axios from "../../axios";
+import axios from "../Common/axios";
 
 export const Cart = () => {
   const [cart, setCart] = useState([]);

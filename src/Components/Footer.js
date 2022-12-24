@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "..//..//assets/style/footer.module.css";
+import classes from "..//assets/style/footer.module.css";
 
 export const Footer = () => {
   return (

@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
-import { Home } from "./components/Pages/Home";
-import { AdminDashboard } from "./components/Pages/AdminDashboard";
-import { ProductPage } from "./components/Pages/ProductPage";
+import { Home } from "./Pages/Home";
+import { AdminDashboard } from "./Pages/AdminDashboard";
+import { ProductPage } from "./Pages/ProductPage";
 
 function App() {
   return (

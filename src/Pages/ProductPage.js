@@ -5,15 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import Rating from "@mui/material/Rating";
 
-import classes from "..//..//assets/style/productPage.module.css";
-import modalCss from "..//..//assets/style/commonModalPage.module.css";
+import classes from "../assets/style/productPage.module.css";
+import modalCss from "../assets/style/commonModalPage.module.css";
 
-import { NavBar } from "..//UI/NavBar";
-import axios from "../../axios";
-import { Form } from "..//Constant/Form";
-import { Footer } from "./Footer";
-import { CommentsPage } from "../UI/CommentsPage";
-import { DummyColorProductsAndSize } from "../UI/DummyColorProducts";
+import axios from "../Common/axios";
+import { Form } from "../Common/Form";
+import { NavBar } from "../Components/NavBar";
+import { Footer } from "../Components/Footer";
+import { CommentsPage } from "../Components/CommentsPage";
+import { DummyColorProductsAndSize } from "../Components/DummyColorProducts";
 
 export const ProductPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);

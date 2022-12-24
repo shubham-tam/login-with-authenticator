@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 
-import classes from "..//..//assets/style/adminDashboard.module.css";
-import modalCss from "..//..//assets/style/commonModalPage.module.css";
-import add from "..//../assets/icon/add.png";
+import classes from "../assets/style/adminDashboard.module.css";
+import modalCss from "../assets/style/commonModalPage.module.css";
+import add from "../assets/icon/add.png";
 
-import { NavBar } from "../UI/NavBar";
-import { Form } from "../Constant/Form";
-import { Table } from "./Table";
-import { Footer } from "./Footer";
+import { Form } from "../Common/Form";
+import { NavBar } from "../Components/NavBar";
+import { Table } from "../Components/Table";
+import { Footer } from "../Components/Footer";
 
 export const AdminDashboard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
