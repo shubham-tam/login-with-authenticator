@@ -72,5 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 Login credentials:
-email: aricalot@gmail.com
+email: aricalot@gmail.com <br />
 pw: TEST@123
